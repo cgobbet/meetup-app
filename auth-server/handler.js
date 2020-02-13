@@ -9,7 +9,7 @@ module.exports.getAccessToken = async (event) => {
     + '&client_secret=4010b2b0e6k9u8ojghfjkf8v8u'
     + '&grant_type=authorization_code'
     + '&redirect_uri=https://cgobbet.github.io/meetup-app/'
-    + '&code=6cadfb4a021263480ad84b7dded10a0d';
+    + '&code=15a32f538d93f1174d979bed82eac5fd'; // should be changed after each server run; to get a new authorization code, https://secure.meetup.com/oauth2/authorize?client_id=l2jcfng9l83dsd3qe5vb48988n&response_type=code&redirect_uri=https://cgobbet.github.io/meetup-app/” - the code will be the last URL element
 
   const info = await axios.post(MEETUP_OAUTH_URL);
 
@@ -21,21 +21,3 @@ module.exports.getAccessToken = async (event) => {
     }),
   };
 };
-
-// 'use strict';
-//
-// module.exports.hello = async event => {
-//   return {
-//     statusCode: 200,
-//     body: JSON.stringify(
-//       {
-//         message: 'Go Serverless v1.0! Your function executed successfully!',
-//         input: event,
-//       },
-//       null,
-//       2
-//     ),
-//   };
-// };
-  // Use this code if you don't use the http event with the LAMBDA-PROXY integration
-  // return { message: 'Go Serverless v1.0! Your function executed successfully!', event };
