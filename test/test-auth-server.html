@@ -1,31 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-  </head>
-  <body>
-    <div id="container">
-      <input id="code" type="text" placeholder="code" />
-      <button id="getToken">Get Token</button>
-      <p id="result"></p>
-          </div>
 
-          <script type="text/javascript">
-            const getTokenElement = document.getElementById('getToken');
-            getTokenElement.onclick = function() {
-              const codeElement = document.getElementById('code');
-              const resultElement = document.getElementById('result');
-              const codeValue =  codeElement.value;
+<head></head>
 
-              const lambdaURL = 'https://sz7vowj5hl.execute-api.eu-central-1.amazonaws.com/dev/api/token/' + codeValue;
+<body>
+  <div id="container">
+    <input id="code" type="text" placeholder="code" />
+    <button id="getToken">Get Token</button>
+    <p id="result"></p>
+  </div>
 
-              fetch(lambdaURL)
-                .then(function(response) {
-                  return response.json();
-                })
-                .then(function(json) {
-                  resultElement.innerText = JSON.stringify(json);
-                });
-            }
-          </script>
-        </body>
-      </html>
+  <div id="container-refresh">
+    <input id="refresh" type="text" placeholder="refresh token" />
+    <button id="refreshToken">Refresh Token</button>
+    <p id="refreshed"></p>
+  </div>
+
+  <script type="text/javascript">
+    const getTokenElement = document.getElementById('getToken');
+    getTokenElement.onclick = function() {
+      const codeElement = document.getElementById('code');
+      const resultElement = document.getElementById('result');
+      const codeValue = codeElement.value;
+
+      const lambdaURL = 'https://sz7vowj5hl.execute-api.eu-central-1.amazonaws.com/dev/api/token/' + codeValue;
+
+      fetch(lambdaURL)
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(json) {
+          resultElement.innerText = JSON.stringify(json);
+        });
+    };
+
+    const refreshTokenElement = document.getElementById('refreshToken');
+    refreshTokenElement.onclick = function() {
+      const refreshElement = document.getElementById('refresh');
+      const refreshedElement = document.getElementById('refreshed');
+      const refreshedValue = refreshElement.value;
+
+      const refreshURL = 'https://sz7vowj5hl.execute-api.eu-central-1.amazonaws.com/dev/api/refresh_token/' + refreshedValue;
+
+      fetch(refreshURL)
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(json) {
+          refreshedElement.innerText = JSON.stringify(json);
+        });
+    };
+  </script>
+</body>
+
+</html>
