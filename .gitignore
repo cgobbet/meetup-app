@@ -24,3 +24,5 @@ yarn-error.log*
 Icon
 Icon
 auth-server/service_information.txt
+test/test-auth-server-copy.html
+test/test-auth-server_copy-2.html
