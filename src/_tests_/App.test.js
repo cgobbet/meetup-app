@@ -18,7 +18,3 @@ describe("<App /> component", () => {
     expect(AppWrapper.find(CitySearch)).toHaveLength(1);
   });
 });
-
- 
-//line 10 stores App shallow-rendering to AppWrapper
-// line 13 runs find()search for EventList; ensures only one EventList on App
