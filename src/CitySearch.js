@@ -7,12 +7,11 @@ class CitySearch extends Component {
     suggestions: [], // defines suggestions in CitySearch state following API documentation
   };
 
-  handleInputChanged = event => {
+  handleInputChanged = event => { // whether any textual changes have been made
     const value = event.target.value;
     this.setState({ query: value });
   };
-  handleItemClicked = value => {
-    //handler that selects clicked suggestion
+  handleItemClicked = value => { //handler that selects clicked suggestion
     this.setState({ query: value });
   };
   render() {
