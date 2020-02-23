@@ -12,4 +12,9 @@ describe('<NumberOfEvents /> component', () => {
   test('show 32 events', () => {
     expect(NumberOfEventsWrapper.state('amount')).toBe(32);
   });
+    test('changes amount of displayed events', () => {
+    expect(NumberOfEventsWrapper.state('amount')).toEqual(32);
+    NumberOfEventsWrapper.find('button').simulate("click");
+    expect(NumberOfEventsWrapper.state('amount')).toEqual(33);
+  });
 });
