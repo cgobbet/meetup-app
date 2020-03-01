@@ -32,7 +32,7 @@ describe("<App /> integration", () => {
     AppWrapper.instance().updateEvents = jest.fn(); //tell Jest to execute update function on the component so results can be seen
     AppWrapper.instance().forceUpdate(); //update the App component
     const CitySearchWrapper = AppWrapper.find(CitySearch); //full rendering gives access to children component and its functions like handleItemClicked()
-    CitySearchWrapper.instance().handleItemClicked("value", 1.1, 1.2); // value on parameter not relevant; used because the function needs to be called with a value
+    CitySearchWrapper.instance().handleItemClicked('value', 1.1, 1.2); // value on parameter not relevant; used because the function needs to be called with a value
     expect(AppWrapper.instance().updateEvents).toHaveBeenCalledTimes(1);
     expect(AppWrapper.instance().updateEvents).toHaveBeenCalledWith(1.1, 1.2); 
     //checks if updateEvents() has been called with the same lat/lon parameters
