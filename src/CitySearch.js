@@ -11,8 +11,9 @@ class CitySearch extends Component {
     const value = event.target.value;
     this.setState({ query: value });
   };
-  handleItemClicked = value => { //handler that selects clicked suggestion
+  handleItemClicked = (value, lat, lon) => {
     this.setState({ query: value });
+    this.props.updateEvents(lat, lon);
   };
   render() {
     return (
@@ -27,12 +28,7 @@ class CitySearch extends Component {
           {this.state.suggestions.map((
             item, //render suggestion list items using name_string to diff
           ) => (
-            <li
-              key={item.name_string}
-              onClick={() => this.handleItemClicked(item.name_string)}
-            >
-              {item.name_string}
-            </li>
+            <li key={item.name_string} onClick={() => this.handleItemClicked(item.name_string, item.lat, item.lon)}>{item.name_string}</li>
           ))}
         </ul>
       </div>
