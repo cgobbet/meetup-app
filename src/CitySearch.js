@@ -37,3 +37,4 @@ class CitySearch extends Component {
 }
 
 export default CitySearch;
+// line 31: list items call  handleItemClicked() with item.name_string param, item.lat and item.lon params
