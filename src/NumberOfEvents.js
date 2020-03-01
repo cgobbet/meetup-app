@@ -15,7 +15,12 @@ class NumberOfEvents extends Component {
     return (
       <div className='NumberOfEvents'>
         <span>Showing</span>
-        <input value={this.state.amount} />
+        <input
+          type='text'
+          className='city'
+          value={this.state.amount}
+          onChange={event => this.onClick(event)}
+        />
         <button onClick={this.onClick}>+1</button>
       </div>
     );
@@ -23,3 +28,5 @@ class NumberOfEvents extends Component {
 }
 
 export default NumberOfEvents;
+
+// line 22: "onChange" handler added to input to make company to "Value"
