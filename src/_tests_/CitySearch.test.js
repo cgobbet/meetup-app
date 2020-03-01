@@ -5,7 +5,7 @@ import { shallow } from "enzyme";
 describe("<CitySearch /> component", () => {
   let CitySearchWrapper;
   beforeAll(() => {
-    CitySearchWrapper = shallow(<CitySearch />);
+    CitySearchWrapper = shallow(<CitySearch updateEvents={() => {}} />);
   });
   test("render text input", () => {
       expect(CitySearchWrapper.find(".city")).toHaveLength(1);
@@ -18,13 +18,11 @@ describe("<CitySearch /> component", () => {
       expect(CitySearchWrapper.find(".city").prop("value")).toBe(query);
   });
   test("change state when text input changes", () => {
-    // const CitySearchWrapper = shallow(<CitySearch />);
     const eventObject = { target: { value: "Berlin" } }; 
     CitySearchWrapper.find(".city").simulate("change", eventObject);
       expect(CitySearchWrapper.state("query")).toBe("Berlin");
     });
   test("render list of suggestions correctly", () => {
-    // const CitySearchWrapper = shallow(<CitySearch />);
     const suggestions = CitySearchWrapper.state("suggestions"); // compares suggestions with state value
       expect(CitySearchWrapper.find(".suggestions li")).toHaveLength(
       suggestions.length,
