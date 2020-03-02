@@ -1,3 +1,5 @@
+import { mockEvents } from "./mock-events";
+
 async function getSuggestions(query) { // mocks api data
   return [
     {
@@ -22,9 +24,8 @@ async function getSuggestions(query) { // mocks api data
   ];
 }
 
-// async function getEvents(lat, lon) {
-//   return mockEvents.events;
-// }
+async function getEvents(lat, lon) {
+  return mockEvents.events;
+}
 
-export { getSuggestions };
-// export { getSuggestions, getEvents };
+export { getSuggestions, getEvents };
