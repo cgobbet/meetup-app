@@ -4,16 +4,18 @@ import React, { Component } from 'react';
 
 import CitySearch from './CitySearch';
 import EventList from './EventList';
-import NumberOfEvents from "./NumberOfEvents";
+import NumberOfEvents from './NumberOfEvents';
+import { getEvents } from './api';
 
 class App extends Component {
   state = {
-    events: [],
-    page: null,
-    lat: null,
-    lon: null,
+    events: []
   };
-  
+
+  updateEvents = (lat, lon) => {
+    getEvents(lat, lon).then(events => this.setState({ events }));
+  }
+
   render() {
     return (
       <div className='App'>
