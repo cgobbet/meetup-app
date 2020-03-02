@@ -36,8 +36,12 @@ describe("<App /> integration", () => {
     expect(AppWrapper.instance().updateEvents).toHaveBeenCalledTimes(1);
     expect(AppWrapper.instance().updateEvents).toHaveBeenCalledWith(1.1, 1.2); 
     //checks if updateEvents() has been called with the same lat/lon parameters
+    AppWrapper.unmount();
   });
-});  
-/*  
-At the end of your previous test, add a new line, AppWrapper.unmount();, then create a new test, this one to change the state after getting the list of events:
-*/
+  test("change state after get list of events", async () => {
+    const AppWrapper = shallow(<App />);
+    AppWrapper.instance().updateEvents(1.1, 1.2);
+    await AppWrapper.update();
+    expect(AppWrapper.state('events')).toEqual(mockEvents.events);
+  });
+});
