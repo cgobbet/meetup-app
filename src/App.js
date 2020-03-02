@@ -20,8 +20,9 @@ class App extends Component {
     return (
       <div className='App'>
         <CitySearch updateEvents={this.updateEvents} />
-        {/* pass it as a prop to your CitySearch component */}
-        <EventList />
+        {/* pass events from App to CitySearch */}
+        <EventList events={this.state.events} />
+        {/* pass events from App to EventList */}
         <NumberOfEvents />
       </div>
     );
