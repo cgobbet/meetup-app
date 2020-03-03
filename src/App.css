@@ -1,5 +1,114 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald|Raleway|Roboto&display=swap');
+
+/* font-family: 'Oswald', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Raleway', sans-serif; */
+
+/* Colors used
+
+Text Color (Gray13): #212121;
+Primary Color (Dark Red): #781820;
+Secondary Color (DarkSlateGray): #2F4F4F;
+Secondary Color (Dark Red): #8B0000;
+Quaternary Color (Yellow): #cead00; */
+
+a {
+  color: #781820;
+  font-size: 2vw;
+  font-family: 'Oswald',
+  sans-serif;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #cead00;
+  text-decoration: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 2px;
+  font-family: 'Oswald', sans-serif ;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: ;
+  padding-right: 12px;
+  background-color: #eee;
+}
+
+h1 {
+  color: #781820;
+}
+
+a {
+  color: #781820;
+  text-decoration: none;
+}
+
+/* img {
+  height: auto;
+  width: 90%;
+} */
+
+p {
+  color: #2F4F4F;
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.3rem;
+  margin: 1em;
+  opacity: 0.8;
+}
+
+input.city {
+    padding: 2px;
+    padding-left: 4px;
+    height: 30%;
+    width: auto;
+    position: relative;
+    left: 0;
+    outline: none;
+    border: 1px solid #cdcdcd;
+    border-color: rgba(0, 0, 0, .15);
+    background-color: white;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+input.eventsDisplayed {
+    padding: 0;
+    height: 29px;
+    width: 29px;
+    position: relative;
+    left: 0;
+    outline: none;
+    border: 1px solid #cdcdcd;
+    border-color: rgba(0, 0, 0, .15);
+    background-color: white;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+/* ul, */
+li {
+  /*setting alpha = 0.1*/
+  color:#2F4F4F;
+  list-style-type: none;
+  background: rgba(205, 205, 205, .4);
+  display: inline-block;
+ 
+}
+
+.CitySearch,
+.NumberOfEvents {
+  color: #781820;
+}
+
 .App {
+  white-space: pre-wrap;
+  /* justify-self: center; */
   text-align: center;
+  /* width: 30%; */
 }
 
 .App-logo {
@@ -25,7 +134,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #781820;
 }
 
 @keyframes App-logo-spin {
