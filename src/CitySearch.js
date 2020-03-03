@@ -6,7 +6,7 @@ class CitySearch extends Component {
   state = {
     // define query state for CitySearch component
     query: "", // defines query following API documentation
-    suggestions: [], // defines suggestions in CitySearch state following API documentation
+    suggestions: [] // defines suggestions in CitySearch state following API documentation
   };
 
   handleInputChanged = (event) => { // whether any textual changes have been made
@@ -27,7 +27,6 @@ class CitySearch extends Component {
           className='city'
           value={this.state.query} //<input> will derive its value from the value of query (which is located in the state of CitySearch).
           onChange={this.handleInputChanged}
-          placeholder={this.props.defaultCity}
         />
         <ul className='suggestions'>
           {this.state.suggestions.map((
