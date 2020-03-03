@@ -2,22 +2,26 @@ import React, { Component } from "react";
 
 class Event extends Component {
   state = {
-    event: [],
+    event: {},
     showDetails: false,
   };
 
   handleDetails = () => {
-    this.setState({ showDetails: true });
+    if (this.state.showDetails === false) {
+      this.setState({ showDetails: true });
+    } else {
+      this.setState({ showDetails: false });
+    }
   };
 
   render() {
     const showDetails = this.state.showDetails;
 
     return (
-      <div className="event">
-        <div className="eventWrap">
-          <p className="eventWrap--name">{this.state.event.name}</p>
-          <p className="eventWrap--localDate">{this.state.event.local_date}</p>
+      <div className='event'>
+        <div className='eventWrap'>
+          <p className='eventWrap--name'>{this.state.event.name}</p>
+          <p className='eventWrap--localDate'>{this.state.event.local_date}</p>
           <button onClick={() => this.handleDetails()}>+ Details</button>
         </div>
         {showDetails && (
