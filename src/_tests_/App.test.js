@@ -6,7 +6,6 @@ import React from "react";
 import { mockEvents } from "../mock-events";
 import { mount } from "enzyme";
 import { shallow } from "enzyme";
-import { unmount } from "enzyme";
 
 describe("<App /> component", () => {
   let AppWrapper;
@@ -50,7 +49,7 @@ describe("<App /> integration", () => {
     AppWrapper.setState({
       events: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
     });
-    expect(AppWrapper.find(".Event")).toHaveLength(4);
+    expect(AppWrapper.find(".event")).toHaveLength(4);
     AppWrapper.unmount();
   });
 });
