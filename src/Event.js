@@ -1,30 +1,38 @@
 import React, { Component } from "react";
 
-// import CitySearch from './CitySearch';
-import EventDetails from "./EventDetails";
-
 class Event extends Component {
   state = {
-    events: [],
-    showDetails: false
+    event: [],
+    showDetails: false,
   };
 
-  handleClick = () => {
-    this.setState({ showDetails: !this.state.showDetails });
+  handleDetails = () => {
+    this.setState({ showDetails: true });
   };
 
   render() {
+    const showDetails = this.state.showDetails;
+
     return (
-      <div className='Event'>
-        <div className='id'></div>
-        <div className='name'></div>
-        <EventDetails isOpen={this.state.showDetails}/>
-        <button className='details' onClick={this.handleClick}>
-          Details
-        </button>
+      <div className="event">
+        <div className="eventWrap">
+          <p className="eventWrap--name">{this.state.event.name}</p>
+          <p className="eventWrap--localDate">{this.state.event.local_date}</p>
+          <button onClick={() => this.handleDetails()}>+ Details</button>
+        </div>
+        {showDetails && (
+          <div className='eventDetails'>
+            <p className='eventDetails--description'>
+              {this.state.event.description}
+            </p>
+          </div>
+        )}
       </div>
     );
   }
 }
 
 export default Event;
+// handleDetails old handleShowDetails
+// eventDetails old eventDetails
+// event__Overview event__Overview
