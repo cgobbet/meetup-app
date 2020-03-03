@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import { getSuggestions } from "./api";
+
 class CitySearch extends Component {
   state = {
     // define query state for CitySearch component
@@ -7,22 +9,25 @@ class CitySearch extends Component {
     suggestions: [], // defines suggestions in CitySearch state following API documentation
   };
 
-  handleInputChanged = event => { // whether any textual changes have been made
+  handleInputChanged = (event) => { // whether any textual changes have been made
     const value = event.target.value;
     this.setState({ query: value });
-  };
+    getSuggestions(value).then(suggestions => this.setState({ suggestions }))
+  };//retrieves suggestions according to value input
+
   handleItemClicked = (value, lat, lon) => {
-    this.setState({ query: value });
+    this.setState({ query: value, suggestions: [] });// set initial state and suggestions array start empty
     this.props.updateEvents(lat, lon);
   };
   render() {
     return (
-      <div className='CitySearch'>
-        <input // adds city element textbox
+      <div className='CitySearch'> Show me events around: 
+        <input // adds city element text box
           type='text'
           className='city'
           value={this.state.query} //<input> will derive its value from the value of query (which is located in the state of CitySearch).
           onChange={this.handleInputChanged}
+          placeholder={this.props.defaultCity}
         />
         <ul className='suggestions'>
           {this.state.suggestions.map((
@@ -37,4 +42,4 @@ class CitySearch extends Component {
 }
 
 export default CitySearch;
-// line 31: list items call  handleItemClicked() with item.name_string param, item.lat and item.lon params
+// line 31: list items call handleItemClicked() with item name, item lat and item lon params
