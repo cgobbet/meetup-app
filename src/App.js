@@ -19,11 +19,19 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
+        <h1>meetApp</h1>
+        <p>your groups | your place| your events</p>
+        <div className='items-container'></div>
         <CitySearch updateEvents={this.updateEvents} />
         {/* pass events from App to CitySearch */}
         <EventList events={this.state.events} />
         {/* pass events from App to EventList */}
-        <NumberOfEvents />
+        <NumberOfEvents
+          updateEvents={this.updateEvents}
+          numberOfEvents={this.state.events.length}
+          lat={this.state.lat}
+          lon={this.state.lon}
+        />
       </div>
     );
   }
