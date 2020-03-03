@@ -14,7 +14,7 @@ class App extends Component {
 
   updateEvents = (lat, lon) => {
     getEvents(lat, lon).then(events => this.setState({ events }));
-  }
+  };
 
   render() {
     return (
