@@ -1,20 +1,31 @@
-import NumberOfEvents from "../NumberOfEvents";
-import React from "react";
-import { shallow } from "enzyme";
+import React from 'react';
+import { shallow, mount } from 'enzyme';
+import NumberOfEvents from '../NumberOfEvents';
 
 describe('<NumberOfEvents /> component', () => {
   let NumberOfEventsWrapper;
-  beforeAll(() => { NumberOfEventsWrapper = shallow(<NumberOfEvents />); })
+  beforeAll(() => {
+    NumberOfEventsWrapper = shallow(<NumberOfEvents />);
+  });
 
-  test('render event number input', () => {
-    expect(NumberOfEventsWrapper.find('input')).toHaveLength(1);
+  test('render text box input', () => {
+    expect(NumberOfEventsWrapper.find('.NumberOfEvents')).toHaveLength(1);//expects const to find only 1 NumberOfEvents (div className )
   });
-  test('show 32 events', () => {
-    expect(NumberOfEventsWrapper.state('amount')).toBe(32);
+
+  test('render input', () => {
+    expect(NumberOfEventsWrapper.find('input')).toHaveLength(1);//expects cont to find only one input box
   });
-    test('changes amount of displayed events', () => {
-    expect(NumberOfEventsWrapper.state('amount')).toBe(32);
-    NumberOfEventsWrapper.find('button').simulate("click");
-    expect(NumberOfEventsWrapper.state("amount")).toBe(33);
+
+  test('render proper input number', () => {
+    const amount = NumberOfEventsWrapper.state('amount');
+    expect(NumberOfEventsWrapper.find('.eventsDisplayed').prop('value')).toBe(
+      amount
+    );//expects state to equal the input class eventsDisplayed
   });
+
+  test('change state after input changes', () => {
+    const eventObject = { target: { value: '32' } };
+    NumberOfEventsWrapper.find('.eventsDisplayed').simulate('change', eventObject);
+    expect(NumberOfEventsWrapper.state('amount')).toBe('32');
+  });//simulates state change and expects the actual state to equal it
 });
