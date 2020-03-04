@@ -27,3 +27,4 @@ auth-server/service_information.txt
 test/test-auth-server-copy.html
 test/test-auth-server_copy-2.html
 auth-server/service_information_and_get_auto_code.txt
+auth-server/handler_copy.js
