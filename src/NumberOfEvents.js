@@ -16,7 +16,6 @@ class NumberOfEvents extends Component {
         <input
           type="text"
           className="eventsDisplayed"
-          placeholder="Set number of events shown"
           value={this.state.amount}
           onChange={this.handleInputChanged}
         /> events
