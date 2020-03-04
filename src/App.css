@@ -36,7 +36,17 @@ h1 {
   width: 90%;
 } */
 
-p,
+p {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  background-color: #eee;
+  padding: 0.1em;
+  margin: 2px;
+
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -113,6 +123,19 @@ li {
   color: #555;
 }
 
+.subheader {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Oswald', sans-serif;
+  font-weight: bold;
+  font-size: 1.1em;
+  /* line-height: ; */
+  /* padding-right: 12px; */
+  background-color: #eee;
+  padding: 0.1em;
+  margin: 2px;
+}
+
 .CitySearch,
 .NumberOfEvents {
   color: #781820;
@@ -168,10 +191,12 @@ li {
 .eventDetails--description {
   font-family: 'Roboto', sans-serif;
   font-size: 0.7em;
+  font-weight: lighter;
   text-align: center;
-  padding: 0.5em;
+  padding: 0.7em;
   margin: 2px;
-  background: radial-gradient(rgb(219, 219, 219), #EEEEEE);
+  /* background: radial-gradient(#EEEEEE, rgb(219, 219, 219)); */
+  color: #555;
 }
 
 .button::-moz-focus-inner {
