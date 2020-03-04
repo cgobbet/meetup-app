@@ -20,7 +20,7 @@ class App extends Component {
     return (
       <div className='App'>
         <h1>meetApp</h1>
-        <p>your groups | your place| your events</p>
+        <div className='subheader'>your groups | your places | your events</div>
         <div className='items-container'></div>
         <CitySearch updateEvents={this.updateEvents} />
         {/* pass events from App to CitySearch */}
