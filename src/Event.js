@@ -16,6 +16,7 @@ class Event extends Component {
 
   render() {
     const showDetails = this.state.showDetails;
+    const { event } = this.props;
 
     return (
       <div className='event'>
@@ -25,11 +26,9 @@ class Event extends Component {
           <p className='eventWrap--localTime'>{this.props.event.local_time}</p>
           <button className="button" onClick={() => this.handleDetails()}>+ Details</button>
         </div>
-        {showDetails && (
+        {this.state.showDetails && (
           <div className='eventDetails'>
-            <p className='eventDetails--description'>
-              {this.props.event.description}
-            </p>
+            <p className='eventDetails--description'dangerouslySetInnerHTML={{ __html: event.description }}/>
           </div>
         )}
       </div>
