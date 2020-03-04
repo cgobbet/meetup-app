@@ -28,9 +28,9 @@ class App extends Component {
         {/* pass events from App to EventList */}
         <NumberOfEvents
           updateEvents={this.updateEvents}
-          numberOfEvents={this.state.events.length}
-          lat={this.state.lat}
-          lon={this.state.lon}
+          // numberOfEvents={this.state.events.length}
+          // lat={this.state.lat}
+          // lon={this.state.lon}
         />
       </div>
     );
