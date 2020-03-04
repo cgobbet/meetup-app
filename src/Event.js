@@ -2,8 +2,8 @@ import React, { Component } from "react";
 
 class Event extends Component {
   state = {
-    event: {},
-    showDetails: false,
+    event: [],
+    showDetails: false
   };
 
   handleDetails = () => {
@@ -20,14 +20,15 @@ class Event extends Component {
     return (
       <div className='event'>
         <div className='eventWrap'>
-          <p className='eventWrap--name'>{this.state.event.name}</p>
-          <p className='eventWrap--localDate'>{this.state.event.local_date}</p>
-          <button onClick={() => this.handleDetails()}>+ Details</button>
+          <p className='eventWrap--name'>{this.props.event.name}</p>
+          <p className='eventWrap--localDate'>{this.props.event.local_date}</p>
+          <p className='eventWrap--localTime'>{this.props.event.local_time}</p>
+          <button className="button" onClick={() => this.handleDetails()}>+ Details</button>
         </div>
         {showDetails && (
           <div className='eventDetails'>
             <p className='eventDetails--description'>
-              {this.state.event.description}
+              {this.props.event.description}
             </p>
           </div>
         )}
@@ -37,6 +38,3 @@ class Event extends Component {
 }
 
 export default Event;
-// handleDetails old handleShowDetails
-// eventDetails old eventDetails
-// event__Overview event__Overview
