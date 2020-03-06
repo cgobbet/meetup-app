@@ -1,19 +1,5 @@
 'use strict';
 
-exports.handler = function(event, context) {
-  var responseCode = 200;
-
-  var response = {
-    statusCode: responseCode,
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-    },
-    body: JSON.stringify(event),
-  };
-
-  context.succeed(response);
-};
-
 const axios = require('axios');
 
 module.exports.getAccessToken = async (event) => {
