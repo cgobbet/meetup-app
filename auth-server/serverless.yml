@@ -11,11 +11,12 @@ functions:
     handler: handler.getAccessToken
     events:
       - http:
-          path: api/token/{code}
+          path: api/token/{token}
           method: get
+
   refreshAccessToken:
     handler: handler.refreshAccessToken
     events:
       - http:
           path: api/refresh_token/{refresh_token}
-          method: post
+          method: get
