@@ -15,9 +15,9 @@ class App extends Component {
     lon: null
   };
 
-  // componentDidMount() {
-  //   this.updateEvents();
-  // }
+  componentDidMount() {
+    this.updateEvents();
+  }
 
   updateEvents = (lat, lon, page) => {
     if (lat && lon) {
