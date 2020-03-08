@@ -35,7 +35,7 @@ describe("<App /> integration", () => {
     expect(AppWrapper.instance().updateEvents).toHaveBeenCalledTimes(1);
     expect(AppWrapper.instance().updateEvents).toHaveBeenCalledWith(1.1, 1.2); 
     //checks if updateEvents() has been called with the same lat/lon parameters
-    AppWrapper.unmount();
+    AppWrapper.unmount();// this line leads to this error message: https://i.imgur.com/H0E9DpV.png
   });
   test("change state after get list of events", async () => {
     const AppWrapper = shallow(<App />);
@@ -50,6 +50,6 @@ describe("<App /> integration", () => {
       events: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
     });
     expect(AppWrapper.find(".event")).toHaveLength(4);
-    AppWrapper.unmount();
+    AppWrapper.unmount();// this line leads to this error message: https://i.imgur.com/H0E9DpV.png
   });
 });
