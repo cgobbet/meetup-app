@@ -13,6 +13,7 @@ functions:
       - http:
           path: api/token/{token}
           method: get
+          cors: true 
 
   refreshAccessToken:
     handler: handler.refreshAccessToken
@@ -20,3 +21,4 @@ functions:
       - http:
           path: api/refresh_token/{refresh_token}
           method: get
+          cors: true 
