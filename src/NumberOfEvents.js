@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class NumberOfEvents extends Component {
   state = {
-    amount: 12 //defines default amount of events displayed
+    amount: 32 //defines default amount of events displayed
   };
 
   handleInputChanged = event => {
