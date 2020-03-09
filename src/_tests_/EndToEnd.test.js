@@ -1,6 +1,9 @@
 //needs npm start o terminal to run
 import puppeteer from "puppeteer";
 
+// jest.setup.js
+jest.setTimeout(30000)
+
 describe("show/hide an event details", () => {
   let browser;
   let page;
@@ -36,3 +39,26 @@ describe("show/hide an event details", () => {
       expect(extra).toBeNull();
     });
 });
+
+
+// describe("Show/hide an events details", () => {
+//   let browser;
+//   let page;
+//   beforeAll(async () => {
+//     browser = await puppeteer.launch({
+//       headless: true, //turn off headless to watch tests within the browser
+//       slowMo: 250, // slow down by 250ms
+//     }); //sets var browser
+//     page = await browser.newPage(); //sets var page
+//     await page.goto("http://localhost:3000/"); //set destination
+//     await page.waitForSelector(".event"); //set selector to be watched
+//   });
+
+//   afterAll(() => {
+//     browser.close();
+//   });
+//     test("An event element is collapsed by default", async () => {
+//       const extra = await page.$(".SELECTOR .CLASS_FEATURE");
+//       expect(extra).METHODl();
+//     });
+// });
