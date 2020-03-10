@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+import { InfoAlert } from "./Alert";
 import { getSuggestions } from "./api";
 
 class CitySearch extends Component {
@@ -15,26 +16,28 @@ class CitySearch extends Component {
     getSuggestions(value).then(suggestions => {
       this.setState({ suggestions });
 
-      if (value && suggestions.length === 0) {
-        this.setState({
-          alert: "We cannot find that city",
+      if (value && suggestions.length === 0) { // if there is an input and no suggestions, then...
+        this.setState({// InfoText will be shown
+          infoText:
+            "We can not find the city you are looking for. Please try another city",
         });
       } else {
         this.setState({
-          alert: "",
+          infoText: '',
         });
       }
     });
-  };
+  }
 
   handleItemClicked = (value, lat, lon) => {
     this.setState({ query: value, suggestions: [] }); // set initial state and suggestions array start empty
     this.props.updateEvents(lat, lon);
-    console.log(value);
+    // console.log(value);
   };
   render() {
     return (
       <div className='CitySearch'>
+        <InfoAlert text={this.state.infoText} />
         {" "}
         Show me events around
         <input // adds city element text box
