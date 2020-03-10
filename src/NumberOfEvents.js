@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { ErrorAlert } from './Alert';
+
 class NumberOfEvents extends Component {
   state = {
     amount: 32 //defines default amount of events displayed
@@ -8,17 +10,31 @@ class NumberOfEvents extends Component {
   handleInputChanged = event => {
     const value = event.target.value;
     this.setState({ amount: value });//changes state and defines amount of events displayed
-  };
+
+    if (value < 1) {
+      this.setState({
+        errorText:
+        "Please insert a value equal or greater than 1",
+      });
+    } else {
+      this.setState({
+        errorText: '',
+      });
+    }
+  }
 
   render() {
     return (
-      <div className="NumberOfEvents">Showing the next
+      <div className='NumberOfEvents'>
+        <ErrorAlert text={this.state.errorText} />
+        Showing the next
         <input
-          type="text"
-          className="eventsDisplayed"
+          type='text'
+          className='eventsDisplayed'
           value={this.state.amount}
           onChange={this.handleInputChanged}
-        /> events
+        />{" "}
+        events
       </div>
     );
   }
