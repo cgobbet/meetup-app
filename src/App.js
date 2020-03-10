@@ -43,14 +43,9 @@ class App extends Component {
         <div className='items-container'></div>
         <CitySearch updateEvents={this.updateEvents} />
         {/* pass events from App to CitySearch */}
+        <NumberOfEvents updateEvents={this.updateEvents} />
         <EventList events={this.state.events} />
         {/* pass events from App to EventList */}
-        <NumberOfEvents
-          updateEvents={this.updateEvents}
-          // numberOfEvents={this.state.events.length}
-          // lat={this.state.lat}
-          // lon={this.state.lon}
-        />
       </div>
     );
   }
