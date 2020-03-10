@@ -123,6 +123,18 @@ li {
   color: #555;
 }
 
+.Alert {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Oswald', sans-serif;
+  font-weight: bold;
+  font-size: 1.1em;
+  /* line-height: ; */
+  /* padding-right: 12px; */
+  padding: 0.1em;
+  margin: 2px;
+}
+
 .subheader {
   display: flex;
   flex-direction: column;
