@@ -1,5 +1,6 @@
 import './App.css';
 
+import { Offline, Online } from "react-detect-offline";
 import React, { Component } from 'react';
 
 import CitySearch from './CitySearch';
@@ -41,6 +42,12 @@ class App extends Component {
         <h1>meetApp</h1>
         <div className='subheader'>your groups | your places | your events</div>
         <div className='items-container'></div>
+        <div className='offline'>
+          <Offline>
+            You are offline. Recent data will only become available after you
+            reconnect
+          </Offline>
+        </div>
         <CitySearch updateEvents={this.updateEvents} />
         {/* pass events from App to CitySearch */}
         <NumberOfEvents updateEvents={this.updateEvents} />
