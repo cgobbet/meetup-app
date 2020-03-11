@@ -135,6 +135,15 @@ li {
   margin: 2px;
 }
 
+.offline {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1em;
+    text-align: center;
+    padding: 0em;
+    margin: 0px;
+    color: #781820;
+}
+
 .subheader {
   display: flex;
   flex-direction: column;
