@@ -1,11 +1,11 @@
 import './App.css';
 
-import { Offline, Online } from "react-detect-offline";
 import React, { Component } from 'react';
 
 import CitySearch from './CitySearch';
 import EventList from './EventList';
 import NumberOfEvents from './NumberOfEvents';
+import { Offline } from "react-detect-offline";
 import { getEvents } from './api';
 
 class App extends Component {
