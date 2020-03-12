@@ -308,6 +308,16 @@ li {
   color: #781820;
 }
 
+.recharts-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.recharts-layer {
+  font-family: 'Roboto', sans-serif;
+  font-size: .8em;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
