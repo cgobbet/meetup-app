@@ -30,8 +30,8 @@ class Event extends Component {
 
     return (
       [
-        {"name": "People Going", value: reserved},
-        {"name": "Still Open", "value": places}
+        {"name": "People Going", "value": reserved},
+        {"name": "Available Places", "value": places}
       ]
     )
   }
@@ -40,7 +40,7 @@ class Event extends Component {
     // const showDetails = this.state.showDetails;
     const { event } = this.props;
 
-    let colors = ["#B22222", "#FFD700"];
+    let colors = ["#B22222", "#556B2F"];
 
     return (
       <div className='event'>
