@@ -110,14 +110,13 @@ async function getEvents(lat, lon, page) {
       url += "&lat=" + lat + "&lon=" + lon;
     }
     if (page) {
-      url += "&page" + page;
+      url += "&page=" + page;
     }
     const result = await axios.get(url);
     const events = result.data.events;
     if (events.length) { // Check if the events exist
       localStorage.setItem("lastEvents", JSON.stringify(events));// as localStorage only stores strings, JSONStringify convert list intro string
     }
-
     return events;
   }
   return [];
