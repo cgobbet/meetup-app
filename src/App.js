@@ -74,7 +74,7 @@ class App extends Component {
     return (
       <div className='App'>
         <h1>meetApp</h1>
-        <div className='subheader'>your groups | your places | your events</div>
+        <div className='subheader'>Meetup your places | Meetup your events</div>
         <div className='items-container'></div>
         <div className='offline'>
           <Offline>
