@@ -64,7 +64,7 @@ class Event extends Component {
                     cx='50%'
                     cy='50%'
                     innerRadius={40}
-                    outerRadius={70}
+                    outerRadius={60}
                     label
                   >
                     {this.getAttendance().map((entry, index) => (
