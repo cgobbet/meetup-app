@@ -31,3 +31,4 @@ auth-server/handler_copy.js
 src/setupProxy.js
 src/mock-events-2.json
 src/mock-events-2.js
+meetup.code-workspace
