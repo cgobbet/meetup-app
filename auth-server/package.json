@@ -3,7 +3,7 @@
     "axios": "^0.21.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "serverless": "^1.65.0"
+    "serverless": "^3.25.1"
   },
   "devDependencies": {
     "http-proxy-middleware": "^1.0.1"
